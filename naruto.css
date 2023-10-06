@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(zyro-image.png);
+    background-size: cover;
+}
+.container {
+    position: relative;
+    display: flex;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, transparent, #0004);
+}
+
+.container .box {
+    position: relative;
+    width: 320px;
+    height: 400px;
+    background: #4444;
+    margin: 0 20px;
+    border-radius: 20px;
+    background: linear-gradient(45deg, #5f03b6 25%, #444 25%, #444 50%, #5f03b6 50%, #5f03b6 75%, #444 75%, #444 100%);
+    background-size: 40px 40px;
+    filter: grayscale(1);
+    animation: animateBg 0.1s linear infinite;
+    animation-play-state: paused;
+    transition: filter 1s;
+    display: flex;
+    justify-content: center;
+}
+
+.container .box:nth-child(2) {
+    background: linear-gradient(45deg, #ffee04 25%, #444 25%, #444 50%, #ffee04 50%, #ffee04 75%, #444 75%, #444 100%);
+    background-size: 40px 40px;
+}
+
+.container .box:hover {
+    animation-play-state: running;
+    filter: grayscale(0);
+}
+
+@keyframes animateBg {
+    0% {
+        background-position: 0;
+    }
+    100% {
+        background-position: 40px;
+    }
+}
+
+.container .box img {
+    position: absolute;
+    bottom: 0;
+    height: 90%;
+    transition: height 0.5s;
+}
+
+.container .box:hover img {
+    height: 400px;
+}
